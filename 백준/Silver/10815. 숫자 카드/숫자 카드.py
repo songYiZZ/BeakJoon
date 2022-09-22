@@ -7,20 +7,12 @@ card.sort()
 m = int(input())
 info = list(map(int, input().split()))
 
-def search(arr,target,start,end):
+dict = {}
+for i in card:
+  dict[i] = 0
 
-  while start <= end:
-    mid = (start+end)//2
-    if target == arr[mid]:
-      return mid
-    elif target<arr[mid]:
-      end = mid-1
-    else :
-      start = mid+1
-  return None
- 
-for i in info:
-  if search(card,i,0,n-1) is not None:
-    print(1,end=' ')
+for j in info:
+  if j not in dict:
+    print(0, end=' ')
   else:
-    print(0,end=' ')
+    print(1, end=' ')
